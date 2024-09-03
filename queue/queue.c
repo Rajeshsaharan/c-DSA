@@ -61,6 +61,18 @@ void enqueue(struct queue * q, int data){
 	}
 }
 
+int dequeue(struct queue * q) {
+		if(is_empty(q)){
+			printf("queue is already empty ");
+			return -1;
+		}else{
+			int return_data = q->Arr[q->front];
+			q->front++;
+			return return_data;
+		}
+
+}
+
 void print_queue(struct queue * q){
 	//int Arr[MAX] = q->Arr[MAX]; //get array of queue direct intilization is not possible in c
 	//we can use pointer to 
@@ -76,9 +88,11 @@ void main(){
 	struct queue * q = create_empty_queue();
 	enqueue(q,20);
 	enqueue(q,30);
-	enqueue(q,40);
 	print_queue(q);
-
+	printf("%d\n", dequeue(q));
+	printf("%d\n", dequeue(q));
+	dequeue(q);
+	dequeue(q);
 }
 
 

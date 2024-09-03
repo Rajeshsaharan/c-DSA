@@ -60,4 +60,3 @@ void main(){
 	print_stack(st);
 
 }
-
